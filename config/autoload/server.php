@@ -17,10 +17,17 @@ return [
     'mode' => SWOOLE_PROCESS,
     'servers' => [
         [
+<<<<<<< HEAD
             'name'      => 'http',
             'type'      => Server::SERVER_HTTP,
             'host'      => '0.0.0.0',
             'port'      => 9510,
+=======
+            'name' => 'http',
+            'type' => Server::SERVER_HTTP,
+            'host' => '0.0.0.0',
+            'port' => 9510,
+>>>>>>> 0c2f795dbaef422f87978b1ad43d4e3eb428b201
             'sock_type' => SWOOLE_SOCK_TCP,
             'callbacks' => [
                 Event::ON_REQUEST => [Hyperf\HttpServer\Server::class, 'onRequest'],

@@ -12,4 +12,3 @@ declare(strict_types=1);
 return [
     'innerHttp' => \Hyperf\HttpServer\Server::class,
 ];
-
