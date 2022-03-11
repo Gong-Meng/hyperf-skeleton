@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
 
 namespace App\Service;
 
 
-class UserService
+use App\Service\Interface\UserServiceInterface;
+
+class UserService implements UserServiceInterface
 {
+
 
     public function getInfoById(int $id)
     {
