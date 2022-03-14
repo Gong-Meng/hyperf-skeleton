@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Service;
 
 
-use App\Service\Interface\UserServiceInterface;
+use App\Service\Interfaces\UserServiceInterface;
 
 class UserService implements UserServiceInterface
 {

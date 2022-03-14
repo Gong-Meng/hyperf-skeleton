@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 namespace App\Controller;
-use App\Service\Interface\UserServiceInterface;
+use App\Service\Interfaces\UserServiceInterface;
 use App\Service\UserService;
 use Hyperf\Context\Context;
 use Hyperf\HttpServer\Annotation\AutoController;
@@ -20,7 +20,7 @@ class TestController extends AbstractController
 
 
     /**
-     * @inject;
+     * @Inject ;
      * @var UserServiceInterface
      */
     private $userService;

@@ -13,6 +13,10 @@ use Hyperf\Di\Annotation\AbstractAnnotation;
 class Bar extends AbstractAnnotation
 {
 
+    /**
+     * @var string
+     */
+    public $foo;
 
 
 }

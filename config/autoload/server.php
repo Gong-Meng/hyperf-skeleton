@@ -17,29 +17,30 @@ return [
     'mode' => SWOOLE_PROCESS,
     'servers' => [
         [
-            'name'      => 'http',
-            'type'      => Server::SERVER_HTTP,
-            'host'      => '0.0.0.0',
-            'port'      => 9510,
+            'name' => 'http',
+            'type' => Server::SERVER_HTTP,
+            'host' => '0.0.0.0',
+            'port' => 9510,
             'sock_type' => SWOOLE_SOCK_TCP,
             'callbacks' => [
                 Event::ON_REQUEST => [Hyperf\HttpServer\Server::class, 'onRequest'],
             ],
         ],
-        [
-            'name'      => 'innerHttp',
-            'type'      => Server::SERVER_HTTP,
-            'host'      => '0.0.0.0',
-            'port'      => 9520,
-            'sock_type' => SWOOLE_SOCK_TCP,
-            'callbacks' => [
-                Event::ON_REQUEST => ['innerHttp', 'onRequest'],
-            ],
-        ],
+//        [
+//            'name'      => 'innerHttp',
+//            'type'      => Server::SERVER_HTTP,
+//            'host'      => '0.0.0.0',
+//            'port'      => 9520,
+//            'sock_type' => SWOOLE_SOCK_TCP,
+//            'callbacks' => [
+//                Event::ON_REQUEST => ['innerHttp', 'onRequest'],
+//            ],
+//        ],
     ],
     'settings' => [
         Constant::OPTION_ENABLE_COROUTINE => true, // 开启内置协程
-        Constant::OPTION_WORKER_NUM => swoole_cpu_num(), // 设置启动的 Worker 进程数
+       // Constant::OPTION_WORKER_NUM => swoole_cpu_num(), // 设置启动的 Worker 进程数
+        Constant::OPTION_WORKER_NUM => 1, // 设置启动的 Worker 进程数
         Constant::OPTION_PID_FILE => BASE_PATH . '/runtime/hyperf.pid', // master 进程的 PID
         Constant::OPTION_OPEN_TCP_NODELAY => true, // TCP 连接发送数据时会关闭 Nagle 合并算法，立即发往客户端连接
         Constant::OPTION_MAX_COROUTINE => 100000, // 设置当前工作进程最大协程数量
